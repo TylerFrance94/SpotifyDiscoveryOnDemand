@@ -1,4 +1,6 @@
-CHANGE THESE IN THE PROGRAM TO MATCH YOUR INFO
+This makes a new playlist based on related artists from the base playlist.
+
+CHANGE THESE IN THE PROGRAM TO MATCH YOUR INFO IN THE CODE
 
 client_id = 'yourclientid' 
 client_secret = 'yourclientsecret' 
