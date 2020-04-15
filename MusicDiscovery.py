@@ -27,7 +27,7 @@ def createPlaylist(songlist):
         raise Exception('Token error')
 
     sp = spotipy.Spotify(auth=token)
-    playlist = sp.user_playlist_create('513rxnyfbivo3ruo3f815mi8r', 'Discover on demand: '
+    playlist = sp.user_playlist_create(username, 'Discover on demand: '
                                        + str(mydate.year) + str(mydate.month) + str(mydate.day))
 
     playlistid = playlist['id']
@@ -86,8 +86,9 @@ def getSongs(randomart):
     randsongs = []
     for i in range(len(randomart)):
         artsongs = sp.artist_top_tracks(randomart[i])
-        rand = np.random.randint(0, len(artsongs['tracks'])-1)
-        randsongs.append(artsongs['tracks'][rand]['id'])
+        if(len(artsongs['tracks'])-1) > 0:
+            rand = np.random.randint(0, len(artsongs['tracks'])-1)
+            randsongs.append(artsongs['tracks'][rand]['id'])
 
     return randsongs
 
